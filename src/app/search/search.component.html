@@ -1,0 +1,32 @@
+<br />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+
+<div
+  class="card text-white bg-secondary mb-3"
+  style="max-width: 34rem;margin: auto;"
+>
+<div class="center"><img src="https://lh3.googleusercontent.com/dwyqtk9CgAaoXUcYB8pUHXRErF5A2Shd0UrZdBLkpAFx_e630aZahwN31HRZWNksIQ" width="200" height="200"></div>
+  <div class="card-header"><h1 class="title">FHtify™</h1></div>
+  <div class="card-body">
+    <p class="need">Let us finds your favourite songs!</p>
+    <form>
+      <div class="form-group"></div>
+      <input
+        class="w3-input w3-border w3-round-xxlarge purple-font"
+        color="black"
+        type="text"
+        [(ngModel)]="searchStr"
+        placeholder="                Search Your Song/Album/Artist Here!"
+        (keyup)="searchTerm$.next()"
+        [ngModelOptions]="{ standalone: true }"
+      />
+    
+    </form>
+    <div *ngFor="let track of resultItems">
+      <app-result-box
+        [musicData]="track"
+        (viewMusicDetails)="listenForDetails($event)"
+      ></app-result-box>
+    </div>
+  </div>
+</div>

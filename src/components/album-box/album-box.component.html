@@ -1,0 +1,17 @@
+<!-- <div class="row">
+  <div class="col-md-4"> -->
+<img
+  class="img-box"
+  *ngIf="album.images.length > 0"
+  [src]="album.images[0].url"
+  alt=""
+/>
+
+<div class="center"><p class="data" align="center">{{ album.name }}</p></div>
+  <div class="center"><button class="button button1" (click)="onViewDetails(album.id)">
+  View Details
+</button></div>
+<br/>
+<br/>
+<!-- </div>
+</div> -->

@@ -1,0 +1,54 @@
+<link
+  href="https://fonts.googleapis.com/css?family=Boogaloo"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+<br />
+
+<div *ngIf="albumDetails"
+style="max-width: 72rem;margin: auto;"
+>
+  <div class="row">
+    <div class="column">
+      <img [src]="albumDetails.images[0].url" class="center" alt="" />
+    </div>
+    <div class="column" >
+      <button
+        class="button button2"
+        (click)="viewInSpotify(albumDetails.external_urls.spotify)"
+      >
+        View In Spotify
+      </button>
+      <button class="button button2" [routerLink]="['/artist/:id']" >
+        View Artist
+      </button>
+    </div>
+  </div>
+</div>
+
+<br />
+
+<table class="w3-table-all">
+  <tr class="w3-black">
+    <th>
+      Name of Song
+    </th>
+    <th>Preview Song</th>
+  </tr>
+
+  <ng-container *ngIf="tracksDetails">
+    <tr *ngFor="let item of tracksDetails.items" class="w3-brown">
+      <td>
+        <p>{{ item.name }}</p>
+      </td>
+      <td>
+        <a
+          *ngIf="item.preview_url !== null"
+          [href]="item.preview_url"
+          target="_blank"
+          >Play Preview</a
+        >
+      </td>
+    </tr>
+  </ng-container>
+</table>

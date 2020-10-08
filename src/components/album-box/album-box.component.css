@@ -1,0 +1,43 @@
+.img-box {
+  width: 350px;
+  height: 350px;
+}
+
+@media only screen and (max-width: 600px) {
+  .img-box {
+    width: 500px;
+    height: 500px;
+  }
+}
+.button {
+  background-color: black;
+  border: none;
+  color: slategray;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: slategray;
+  color: black;
+  border: 2px solids slategray;
+}
+.button1:hover {
+  background-color: black;
+  color: white;
+}
+.data {
+  font-family: "Boogaloo";
+  font-size: 20px;
+}
+.center {
+  display: flex;
+  justify-content: center;
+}
